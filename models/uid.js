@@ -9,16 +9,13 @@ mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true}).th
     console.log(res);
 })
 
-const urlSchema = new mongoose.Schema({
-    _id: String,
-    textData: String,
-    tinyURL: String,
-    shortID: String,
-    date: { type: Date, default: Date.now() },
-    validity: { type: Date, default: util.calculateValidity() }
+const uidSchema = new mongoose.Schema({
+    uid: String,
+    date: { type: Date, default: Date.now() };
+    validity: { type: Date, default: calculateValidity() }
 });
 
-const DataModel = mongoose.model('DataModel', urlSchema);
+const DataModel = mongoose.model('DataModel', uidSchema);
 
 // let test = new DataModel({_id: uuidv4(), textData: "hello", tinyURL: "soemthing.com", date: new Date()});
 
