@@ -1,6 +1,9 @@
 {
   "name": "polynomial-assignment-api",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.19.0"
+  },
   "description": "Pastebin clone",
   "main": "app.js",
   "dependencies": {

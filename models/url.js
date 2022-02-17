@@ -20,13 +20,5 @@ const urlSchema = new mongoose.Schema({
 
 const DataModel = mongoose.model('DataModel', urlSchema);
 
-// let test = new DataModel({_id: uuidv4(), textData: "hello", tinyURL: "soemthing.com", date: new Date()});
-
-// test.save((err, res) => {
-//     if(err) console.log(err);
-//     console.log(res);
-//     mongoose.connection.close();
-// })
-
 
 module.exports = DataModel;
