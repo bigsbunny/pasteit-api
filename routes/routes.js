@@ -9,29 +9,35 @@ router.get("/", (req, res) => {
     res.send("hello");
 });
 
-router.post("/", (req, res) =>{
+router.post("/", (req, res) => {
     console.log(`body = ${req.body}`);
     let inputData = req.body.data;
     let toEncrypt = req.body.encrypt;
     let encryptKey = req.body.encryptKey;
-    // console.log(inputData, toEncrypt, encryptKey);
+    console.log(inputData, toEncrypt, encryptKey);
     let uid = uuidv4();
 
-    if(inputData === "")
-        return res.status(400).json({error: "Content missing"});
+    if (inputData === "")
+        return res.status(400).json({ error: "Content missing" });
 
     else {
-        let shortID = util.generateShortID().substring(0,6);
-        if(!toEncrypt)
-            let dbEntry = new DataModel({_id: uid, textData: inputData, tinyURL: process.env.CLIENT + "/" + shortID,shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey});
-        else {
-            let encrypted = util.encryptData(inputData, encryptKey);
-            let dbEntry = new DataModel({_id: uid, textData: encrypted, tinyURL: process.env.CLIENT + "/" + shortID,shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey});
+        let shortID = util.generateShortID().substring(0, 6);
+        if (!toEncrypt) {
+            let dbEntry = new DataModel({ _id: uid, textData: inputData, tinyURL: process.env.CLIENT + "/" + shortID, shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey });
+            dbEntry.save((err, res) => {
+                if (err) console.log(err);
+            });
+            res.send(dbEntry);
         }
-        dbEntry.save((err, res) => {
-            if(err) console.log(err);
-        });
-        res.send(dbEntry);
+            else {
+            let encrypted = util.encryptData(inputData, encryptKey)
+            let dbEntry = new DataModel({ _id: uid, textData: encrypted, tinyURL: process.env.CLIENT + "/" + shortID, shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey });
+            dbEntry.save((err, res) => {
+                if (err) console.log(err);
+            });
+            res.send(dbEntry);
+        }
+
     }
 })
 
