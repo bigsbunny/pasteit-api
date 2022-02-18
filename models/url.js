@@ -15,7 +15,9 @@ const urlSchema = new mongoose.Schema({
     tinyURL: String,
     shortID: String,
     date: { type: Date, default: Date.now() },
-    validity: { type: Date, default: util.calculateValidity() }
+    validity: { type: Date, default: util.calculateValidity() },
+    toEncrypt: Boolean,
+    encryptionKey: String
 });
 
 const DataModel = mongoose.model('DataModel', urlSchema);

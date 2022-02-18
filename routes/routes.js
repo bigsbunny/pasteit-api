@@ -11,6 +11,8 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) =>{
     let inputData = req.body.data;
+    let toEncrypt = req.body.encrypt;
+    let encryptKey = req.body.encryptKey;
     console.log(inputData);
     let uid = uuidv4();
 
@@ -19,7 +21,7 @@ router.post("/", (req, res) =>{
 
     else {
         let shortID = util.generateShortID().substring(0,6);
-        let dbEntry = new DataModel({_id: uid, textData: inputData, tinyURL: process.env.CLIENT + "/" + shortID,shortID: shortID, date: new Date(), validity: util.calculateValidity()});
+        let dbEntry = new DataModel({_id: uid, textData: inputData, tinyURL: process.env.CLIENT + "/" + shortID,shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey});
         dbEntry.save((err, res) => {
             if(err) console.log(err);
         });
