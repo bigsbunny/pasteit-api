@@ -1,4 +1,5 @@
-const { nanoid } = require('nanoid')
+const { nanoid } = require('nanoid');
+const axios = require('axios');
 
 const calculateValidity = (currentDate) => {
     return new Date(new Date().getTime() + (24 * 60 * 60 * 1000));
@@ -15,15 +16,18 @@ const encryptData = async (data, key) => {
             data: data, 
             key: key
         });
-        let response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: jsonData
-        });
-        const result = await response.json();
-        console.log("here", result);
+        axios.post(url, jsonData).then((response) => {
+            return response;
+        })
+        // let response = await fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json;charset=utf-8'
+        //     },
+        //     body: jsonData
+        // });
+        // const result = await response.json();
+        // console.log("here", result);
     } catch(err) {
         console.error(err);
     }
