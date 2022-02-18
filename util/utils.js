@@ -8,4 +8,25 @@ const generateShortID = () => {
     return nanoid();
 }
 
-module.exports = { calculateValidity, generateShortID }
+const encryptData = async (data, key) => {
+    try {
+        const url = 'https://classify-web.herokuapp.com/api/encrypt';
+        const jsonData = JSON.stringify({
+            data: data, 
+            key: key
+        });
+        let response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: jsonData
+        });
+        const result = await response.json();
+        console.log(result);
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+module.exports = { calculateValidity, generateShortID, encryptData }
