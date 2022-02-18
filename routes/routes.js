@@ -22,10 +22,10 @@ router.post("/", (req, res) =>{
 
     else {
         let shortID = util.generateShortID().substring(0,6);
-        if(!toEncrypt)
-            let dbEntry = new DataModel({_id: uid, textData: inputData, tinyURL: process.env.CLIENT + "/" + shortID,shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey});
-        else
-            let dbEntry = new DataModel({_id: uid, textData: util.encryptData(inputData), tinyURL: process.env.CLIENT + "/" + shortID,shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey});
+        // if(!toEncrypt)
+        let dbEntry = new DataModel({_id: uid, textData: inputData, tinyURL: process.env.CLIENT + "/" + shortID,shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey});
+        // else
+        //     let dbEntry = new DataModel({_id: uid, textData: util.encryptData(inputData), tinyURL: process.env.CLIENT + "/" + shortID,shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey});
         dbEntry.save((err, res) => {
             if(err) console.log(err);
         });
