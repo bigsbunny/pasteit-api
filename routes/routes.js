@@ -68,4 +68,8 @@ router.get("/:paste_id", (req, res) => {
     });
 });
 
+router.post("/:paste_id", (req, res) => {
+    console.log(req.body);
+});
+
 module.exports = router;
