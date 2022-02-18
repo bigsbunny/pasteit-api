@@ -4,6 +4,7 @@ const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 const DataModel = require('../models/url.js')
 const util = require('../util/utils')
+const axios = require('axios');
 
 router.get("/", (req, res) => {
     res.send("hello");
@@ -31,12 +32,18 @@ router.post("/", (req, res) => {
         }
         else {
             console.log("ENCRYPT");
-            let encrypted = util.encryptData(inputData, encryptKey)
-            let dbEntry = new DataModel({ _id: uid, textData: encrypted, tinyURL: process.env.CLIENT + "/" + shortID, shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey });
-            dbEntry.save((err, res) => {
-                if (err) console.log(err);
-            });
-            res.send(dbEntry);
+            axios.post('https://classify-web.herokuapp.com/api/encrypt', {
+                "data": inputData,
+                "key": encryptKey
+            }).then((response) => {
+                return response;
+            })
+            // let encrypted = util.encryptData(inputData, encryptKey)
+            // let dbEntry = new DataModel({ _id: uid, textData: encrypted, tinyURL: process.env.CLIENT + "/" + shortID, shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey });
+            // dbEntry.save((err, res) => {
+            //     if (err) console.log(err);
+            // });
+            // res.send(dbEntry);
         }
 
     }
