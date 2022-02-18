@@ -23,7 +23,7 @@ const encryptData = async (data, key) => {
             body: jsonData
         });
         const result = await response.json();
-        console.log(result);
+        console.log("here", result);
     } catch(err) {
         console.error(err);
     }

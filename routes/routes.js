@@ -13,7 +13,7 @@ router.post("/", (req, res) =>{
     let inputData = req.body.data;
     let toEncrypt = req.body.encrypt;
     let encryptKey = req.body.encryptKey;
-    console.log(inputData);
+    console.log(inputData, toEncrypt, encryptKey);
     let uid = uuidv4();
 
     if(inputData === "")
