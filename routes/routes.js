@@ -29,7 +29,8 @@ router.post("/", (req, res) => {
             });
             res.send(dbEntry);
         }
-            else {
+        else {
+            console.log("ENCRYPT");
             let encrypted = util.encryptData(inputData, encryptKey)
             let dbEntry = new DataModel({ _id: uid, textData: encrypted, tinyURL: process.env.CLIENT + "/" + shortID, shortID: shortID, date: new Date(), validity: util.calculateValidity(), toEncrypt: toEncrypt, encryptionKey: encryptKey });
             dbEntry.save((err, res) => {
