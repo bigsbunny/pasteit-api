@@ -17,7 +17,8 @@ const urlSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now() },
     validity: { type: Date, default: util.calculateValidity() },
     toEncrypt: Boolean,
-    encryptionKey: String
+    encryptionKey: String,
+    clientIps: []
 });
 
 const DataModel = mongoose.model('DataModel', urlSchema);
