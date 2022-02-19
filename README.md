@@ -1,5 +1,7 @@
 
 # PasteIt
+## **IMPORTANT: KINDLY CHECK OUT THE CLIENT SIDE REPOSITORY FOR PASTEIT TO VIEW THE ENTIRE DETAILS & SCREENSHOTS OF THE PROJECT -  [polynomial-assignment-client](https://github.com/bigsbunny/polynomial-assignment-client).**
+
 ## **This is the backend repository for PasteIt's REST API implementation.**
 
 ---
