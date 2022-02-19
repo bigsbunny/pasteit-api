@@ -1,6 +1,6 @@
 
 # PasteIt
-This is the backend repository for PasteIt's REST API implementation.
+## **This is the backend repository for PasteIt's REST API implementation.**
 
 ---
 PasteIt is a project created for polynomial.ai's internship drive of 2022. This project is submitted by -
