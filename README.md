@@ -14,7 +14,7 @@ PasteIt is a project created for polynomial.ai's internship drive of 2022. This 
 PasteIt's project files are divided into two repositories which follow a client-server architecture -
 
 - Frontend - [polynomial-assignment-client](https://github.com/bigsbunny/polynomial-assignment-client)
-- Backend (REST API) - [polynomial-assignment-client](https://github.com/bigsbunny/polynomial-assignment-api)
+- Backend (REST API) - [polynomial-assignment-api](https://github.com/bigsbunny/polynomial-assignment-api)
 
 ---
 ## Tech stack used
