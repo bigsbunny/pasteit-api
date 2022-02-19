@@ -22,7 +22,7 @@ PasteIt's project files are divided into two repositories which follow a client-
 - Backend - NodeJS, Express, MongoDB Atlas
 
 ---
-# How to setup PasteIt's frontend to test the API
+# How to setup PasteIt's backend to test the API
 
 >Clone the repository
 ```
