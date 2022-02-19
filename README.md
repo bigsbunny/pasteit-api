@@ -25,3 +25,8 @@ PasteIt's project files are divided into two repositories which follow a client-
 - The frontend of the project is deployed on Heroku at the URL [https://tranquil-tor-67097.herokuapp.com/](https://tranquil-tor-67097.herokuapp.com/), which can be used to test the REST API created for the project, so as to match the instructions given in the project guidelines. 
 - The frontend acts as the client to the REST API of PasteIt deployed on Heroku at [https://young-eyrie-03918.herokuapp.com/](https://young-eyrie-03918.herokuapp.com/), which sends requests with relevant data to the API and gets JSON response back from the API.
 
+## Interface Screenshots
+![UI1](./assets/ui1.png)
+![UI2](./assets/ui2.png)
+![UI4](./assets/ui4.png)
+![UI3](./assets/ui3.png)
