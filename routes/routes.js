@@ -7,7 +7,7 @@ const util = require('../util/utils')
 const axios = require('axios');
 
 router.get("/", (req, res) => {
-    res.send("hello");
+    res.status(200).json({"response": "successful"})
 });
 
 router.post("/", (req, res) => {
