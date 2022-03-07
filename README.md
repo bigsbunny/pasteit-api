@@ -1,22 +1,16 @@
 
 # PasteIt
-## **IMPORTANT: KINDLY CHECK OUT THE CLIENT SIDE REPOSITORY FOR PASTEIT TO VIEW THE ENTIRE DETAILS & SCREENSHOTS OF THE PROJECT -  [polynomial-assignment-client](https://github.com/bigsbunny/polynomial-assignment-client).**
+## **IMPORTANT: KINDLY CHECK OUT THE CLIENT SIDE REPOSITORY FOR PASTEIT TO VIEW THE ENTIRE DETAILS & SCREENSHOTS OF THE PROJECT -  [pasteit-client](https://github.com/bigsbunny/pasteit-client).**
 
 ## **This is the backend repository for PasteIt's REST API implementation.**
 
 ---
-PasteIt is a project created for polynomial.ai's internship drive of 2022. This project is submitted by -
 
-- Name: Bighnesh Sahoo
-- College ID: B319013
-- College: IIIT Bhubaneswar
-
----
 ## Project Structure
 PasteIt's project files are divided into two repositories which follow a client-server architecture -
 
-- Frontend - [polynomial-assignment-client](https://github.com/bigsbunny/polynomial-assignment-client)
-- Backend (REST API) - [polynomial-assignment-api](https://github.com/bigsbunny/polynomial-assignment-api)
+- Frontend - [pasteit-client](https://github.com/bigsbunny/pasteit-client)
+- Backend (REST API) - [pasteit-api](https://github.com/bigsbunny/pasteit-api)
 
 ---
 ## Tech stack used
@@ -28,11 +22,11 @@ PasteIt's project files are divided into two repositories which follow a client-
 
 >Clone the repository
 ```
-git clone git@github.com:bigsbunny/polynomial-assignment-api.git
+git clone git@github.com:bigsbunny/pasteit-api.git
 ```
 >Change directoty
 ```
-cd polynomial-assignment-api
+cd pasteit-api
 ```
 >Setup React
 ```
